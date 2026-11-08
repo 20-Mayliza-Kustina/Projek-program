@@ -114,4 +114,55 @@ def tambah_data():
         "Pengambilan MBG berhasil dicatat!"
     )
     
+# MEMPERRBARUI TABEL DAN STATUS KELAS
+def perbarui_tabel():
+    for item in tabel_pengambilan.get_children():
+        tabel_pengambilan.delete(item)
+        
+    for item in tabel_status.get_children():
+        tabel_status.delete(item)
+    
+    hari_ini = date.today().isoformat()
+    kelas_sudah_ambil = set()
+    jumlah_catatan = 0
+    total_porsi = 0
+    
+    for catatan in data:
+        if catatan["tanggal"] == hari_ini:
+            tabel_pengambilan.insert(
+                "", tk.END,
+                values=(
+                    catatan["kelas"],
+                    catatan["nama"],
+                    catatan["jumlah"],
+                    catatan["tanggal"]
+                )
+            )
+            
+            kelas_sudah_ambil.add(catatan["kelas"])
+            jumlah_catatan += 1
+            total_porsi += catatan["jumlah"]
+            
+    for kelas in semua_kelas:
+        if kelas in kelas_sudah_ambil:
+            status = "Sudah Ambil"
+        else:
+            status = "Belum Ambil"
+            
+        tabel_status.insert(
+            "", tk.END,
+            values=(kelas, status)
+        )
+        
+    label_ringkasan.config(
+        text=(
+            f"Tanggal: {hari_ini} | "
+            f"Kelas sudah mengambil: {len(kelas_sudah_ambil)} | "
+            f"Kelas belum mengambil: "
+            f"{len(semua_kelas) - len(kelas_sudah_ambil)} | "
+            f"Total catatan: {jumlah_catatan} | "
+            f"Total porsi: {total_porsi}"
+        )
+    )
+    
     
