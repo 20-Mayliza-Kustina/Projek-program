@@ -235,4 +235,58 @@ tombol_simpan.grid(
     row=2, column=0, columnspan=5, pady=35
 )
 
+# TAB LAPORAN
+tab = ttk.Notebook(root)
+tab.pack(fill="both", expand=True, padx=15, pady=5)
+
+halaman_pengambilan = ttk.Frame(tab)
+halaman_status = ttk.Frame(tab)
+
+tab.add(halaman_pengambilan, text="Riwayat Hari Ini")
+tab.add(halaman_status, text="Status Semua Kelas")
+
+label_ringkasan = ttk.Label(
+    halaman_pengambilan,
+    text="",
+)
+label_ringkasan.pack(pady=8)
+
+tabel_pengambilan = ttk.Treeview(
+    halaman_pengambilan,
+    columns=("kelas", "nama", "jumlah", "tanggal"),
+    show="headings"
+)
+
+for kolom, teks, lebar in [
+    ("kelas", "Kelas", 130),
+    ("nama", "Perwakilan", 180),
+    ("jumlah", "Jumlah MBG", 120),
+    ("tanggal", "Tanggal", 130)
+]:
+    tabel_pengambilan.heading(kolom, text=teks)
+    tabel_pengambilan.column(kolom, width=lebar)
+
+tabel_pengambilan.pack(
+    fill="both", expand=True, padx=5, pady=5
+)
+
+tabel_status = ttk.Treeview(
+    halaman_status,
+    columns=("kelas", "status"),
+    show="headings"
+)
+
+tabel_status.heading("kelas", text="Kelas")
+tabel_status.heading("status", text="Status Pengambilan")
+tabel_status.column("kelas", width=150)
+tabel_status.column("status", width=200)
+
+tabel_status.pack(
+    fill="both", expand=True, padx=5, pady=5
+)
+
+# MENAMPILKAN DATA AWAL DAN KELAS PERTAMA
+pilih_kelas()
+perbarui_tabel()
+
 root.mainloop()
