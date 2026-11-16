@@ -1,4 +1,4 @@
-# PROGRAM PROJEK APLIKASI PANATU MBG
+# PROGRAM PROJEK APLIKASI PANTAU MBG
 
 import tkinter as tk
 from tkinter import ttk, messagebox
@@ -165,4 +165,74 @@ def perbarui_tabel():
         )
     )
     
-    
+# MEMBUAT JENDELA
+root = tk.Tk()
+root.title("Aplikasi Pantau MBG")
+root.geometry("750x550")
+
+judul = tk.Label(
+    root,
+    text="Aplikasi Pantau MBG",
+    font=("Arial", 20, "bold"),
+    pady=10
+)
+judul.pack(pady=10)
+
+# FORMULIR PENGAMBILAN
+form = ttk.LabelFrame(
+    root,
+    text="Formulir Pengambilan MBG",
+    padding=10
+)
+form.pack(fill="x", padx=15, pady=5)
+
+ttk.Label(form, text="Tingkat kelas").grid(
+    row=0, column=0, sticky="w", padx=10, pady=15
+)
+
+combo_tingkat = ttk.Combobox(
+    form,
+    values=["10", "11", "12"],
+    state="readonly",
+    width=12
+)
+combo_tingkat.grid(row=0, column=1, padx=10, pady=15)
+combo_tingkat.set("10")
+combo_tingkat.bind("<<ComboboxSelected>>", pilih_kelas)
+
+ttk.Label(form, text="Kelas").grid(
+    row=0, column=2, sticky="w", padx=5, pady=5
+)
+
+combo_kelas = ttk.Combobox(
+    form,
+    state="readonly",
+    width=15
+)
+combo_kelas.grid(row=0, column=3, padx=5, pady=5)
+
+ttk.Label(form, text="Nama").grid(
+    row=1, column=0, sticky="w", padx=10, pady=15
+)
+
+entry_nama = ttk.Entry(form, width=20)
+entry_nama.grid(row=1, column=1, padx=5, pady=5)
+
+ttk.Label(form, text="Jumlah MBG").grid(
+    row=1, column=2, sticky="w", padx=10, pady=15
+)
+
+entry_jumlah = ttk.Entry(form, width=18)
+entry_jumlah.grid(row=1, column=3, padx=5, pady=5)
+
+tombol_simpan = ttk.Button(
+    form,
+    text="Simpan Pengambilan",
+    command=tambah_data
+)
+
+tombol_simpan.grid(
+    row=2, column=0, columnspan=5, pady=35
+)
+
+root.mainloop()
