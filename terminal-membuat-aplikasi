@@ -1,0 +1,98 @@
+PS D:\Projek program> python -m pip install pyinstaller
+Collecting pyinstaller
+  Downloading pyinstaller-6.22.3-py3-none-win_amd64.whl.metadata (8.5 kB)
+Collecting altgraph (from pyinstaller)
+  Downloading altgraph-0.17.5-py2.py3-none-any.whl.metadata (7.5 kB)
+Collecting packaging>=22.0 (from pyinstaller)
+  Downloading packaging-26.3-py3-none-any.whl.metadata (3.5 kB)
+Collecting pefile>=2022.5.30 (from pyinstaller)
+  Downloading pefile-2024.8.26-py3-none-any.whl.metadata (1.4 kB)
+Collecting pyinstaller-hooks-contrib>=2026.7 (from pyinstaller)
+  Downloading pyinstaller_hooks_contrib-2026.10-py3-none-any.whl.metadata (16 kB)
+Collecting pywin32-ctypes>=0.2.1 (from pyinstaller)
+  Downloading pywin32_ctypes-0.2.3-py3-none-any.whl.metadata (3.9 kB)
+Collecting setuptools>=42.0.0 (from pyinstaller)
+  Downloading setuptools-84.2.1-py3-none-any.whl.metadata (6.6 kB)
+Downloading pyinstaller-6.22.3-py3-none-win_amd64.whl (1.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.5/1.5 MB 452.1 kB/s  0:00:03
+Downloading packaging-26.3-py3-none-any.whl (129 kB)
+Downloading pefile-2024.8.26-py3-none-any.whl (74 kB)
+Downloading pyinstaller_hooks_contrib-2026.10-py3-none-any.whl (463 kB)
+Downloading pywin32_ctypes-0.2.3-py3-none-any.whl (30 kB)
+Downloading setuptools-84.2.1-py3-none-any.whl (876 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 876.3/876.3 kB 1.8 MB/s  0:00:00
+Downloading altgraph-0.17.5-py2.py3-none-any.whl (21 kB)
+Installing collected packages: altgraph, setuptools, pywin32-ctypes, pefile, packaging, pyinstaller-hooks-contrib, pyinstaller
+Successfully installed altgraph-0.17.5 packaging-26.3 pefile-2024.8.26 pyinstaller-6.22.3 pyinstaller-hooks-contrib-2026.10 pywin32-ctypes-0.2.3 setuptools-84.2.1
+
+[notice] A new release of pip is available: 26.1.2 -> 26.3
+[notice] To update, run: python.exe -m pip install --upgrade pip
+PS D:\Projek program> python -m PyInstaller --version
+6.22.3
+PS D:\Projek program> python -m PyInstaller --onefile --windowed --name PantauMBG main.py
+412 INFO: PyInstaller: 6.22.3, contrib hooks: 2026.10
+414 INFO: Python: 3.14.6
+790 INFO: Platform: Windows-11-10.0.22621-SP0
+793 INFO: Python environment: C:\Users\ASUS\AppData\Local\Programs\Python\Python314
+797 INFO: wrote D:\Projek program\PantauMBG.spec
+869 INFO: Module search paths (PYTHONPATH):
+['D:\\Projek program',
+ 'C:\\Users\\ASUS\\AppData\\Local\\Programs\\Python\\Python314\\python314.zip',
+ 'C:\\Users\\ASUS\\AppData\\Local\\Programs\\Python\\Python314\\DLLs',
+ 'C:\\Users\\ASUS\\AppData\\Local\\Programs\\Python\\Python314\\Lib',
+ 'C:\\Users\\ASUS\\AppData\\Local\\Programs\\Python\\Python314',
+ 'C:\\Users\\ASUS\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\site-packages',
+ 'D:\\Projek program']
+2570 INFO: checking Analysis
+2572 INFO: Building Analysis because Analysis-00.toc is non existent
+2572 INFO: Looking for Python shared library...
+2572 INFO: Using Python shared library: C:\Users\ASUS\AppData\Local\Programs\Python\Python314\python314.dll
+2582 INFO: Running Analysis Analysis-00.toc
+2585 INFO: Target bytecode optimization level: 0
+2586 INFO: Initializing module dependency graph...
+2625 INFO: Initializing module graph hook caches...
+2868 INFO: Analyzing modules for base_library.zip ...
+9332 INFO: Processing standard module hook 'hook-encodings.py' from 'C:\\Users\\ASUS\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\site-packages\\PyInstaller\\hooks'
+11708 INFO: Processing standard module hook 'hook-pickle.py' from 'C:\\Users\\ASUS\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\site-packages\\PyInstaller\\hooks'
+12870 INFO: Processing standard module hook 'hook-math.py' from 'C:\\Users\\ASUS\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\site-packages\\PyInstaller\\hooks'
+13450 INFO: Processing standard module hook 'hook-difflib.py' from 'C:\\Users\\ASUS\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\site-packages\\PyInstaller\\hooks'
+13505 INFO: Processing standard module hook 'hook-heapq.py' from 'C:\\Users\\ASUS\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\site-packages\\PyInstaller\\hooks'
+29464 INFO: Caching module dependency graph...
+29536 INFO: Analyzing D:\Projek program\main.py
+29555 INFO: Processing pre-find-module-path hook 'hook-tkinter.py' from 'C:\\Users\\ASUS\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\site-packages\\PyInstaller\\hooks\\pre_find_module_path'
+29571 INFO: TclTkInfo: initializing cached Tcl/Tk info...
+31522 INFO: Processing standard module hook 'hook-_tkinter.py' from 'C:\\Users\\ASUS\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\site-packages\\PyInstaller\\hooks'
+31721 INFO: Processing module hooks (post-graph stage)...
+31729 INFO: Processing standard module hook 'hook-_tkinter.py' from 'C:\\Users\\ASUS\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\site-packages\\PyInstaller\\hooks'
+31756 INFO: Performing binary vs. data reclassification (927 entries)
+47481 INFO: Looking for ctypes DLLs
+47490 INFO: Analyzing run-time hooks ...
+47497 INFO: Including run-time hook 'pyi_rth_inspect.py' from 'C:\\Users\\ASUS\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks'
+47515 INFO: Including run-time hook 'pyi_rth__tkinter.py' from 'C:\\Users\\ASUS\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks'
+47583 INFO: Creating base_library.zip...
+47637 INFO: Looking for dynamic libraries
+48186 INFO: Extra DLL search directories (AddDllDirectory): []
+48187 INFO: Extra DLL search directories (PATH): []
+48712 INFO: Warnings written to D:\Projek program\build\PantauMBG\warn-PantauMBG.txt
+48750 INFO: Graph cross-reference written to D:\Projek program\build\PantauMBG\xref-PantauMBG.html
+48852 INFO: checking PYZ
+48853 INFO: Building PYZ because PYZ-00.toc is non existent
+48854 INFO: Building PYZ (ZlibArchive) D:\Projek program\build\PantauMBG\PYZ-00.pyz
+49496 INFO: Building PYZ (ZlibArchive) D:\Projek program\build\PantauMBG\PYZ-00.pyz completed successfully.
+49688 INFO: checking PKG
+49697 INFO: Building PKG because PKG-00.toc is non existent
+49701 INFO: Building PKG (CArchive) PantauMBG.pkg
+52733 INFO: Building PKG (CArchive) PantauMBG.pkg completed successfully.
+52853 INFO: Bootloader C:\Users\ASUS\AppData\Local\Programs\Python\Python314\Lib\site-packages\PyInstaller\bootloader\Windows-64bit-intel\runw.exe
+52854 INFO: checking EXE
+52855 INFO: Building EXE because EXE-00.toc is non existent
+52855 INFO: Building EXE from EXE-00.toc
+52857 INFO: Copying bootloader EXE to D:\Projek program\dist\PantauMBG.exe
+53633 INFO: Copying icon to EXE
+53726 INFO: Copying 0 resources to EXE
+53727 INFO: Embedding manifest in EXE
+53806 INFO: Appending PKG archive to EXE
+54110 INFO: Fixing EXE headers
+54567 INFO: Building EXE from EXE-00.toc completed successfully.
+54626 INFO: Build complete! The results are available in: D:\Projek program\dist
+PS D:\Projek program> * 
